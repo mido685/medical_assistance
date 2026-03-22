@@ -36,4 +36,4 @@ COPY checkpoint-3270/ ./checkpoint-3270/
 EXPOSE 7860
 
 # ── Start the app ──────────────────────────────────────────────────────────────
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "$PORT"]
