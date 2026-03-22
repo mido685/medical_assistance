@@ -1,16 +1,12 @@
-# Environment files
-.env
-
-# Checkpoints and large model files
-checkpoint-3270/
+echo "checkpoint-3270/
 *.pt
 *.safetensors
-
-# Python cache
 __pycache__/
 *.pyc
-
-# Data & notebooks (optional: only if you don’t want to track them)
+.env
 medication_cleaned.csv
 checkpoint.json
-medication_ner_finetune.ipynb
+medication_ner_finetune.ipynb" > .gitignore
+
+git add .gitignore
+git commit -m "add .gitignore to ignore large files"
