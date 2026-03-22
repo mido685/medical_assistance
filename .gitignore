@@ -7,3 +7,5 @@ __pycache__/
 medication_cleaned.csv
 checkpoint.json
 medication_ner_finetune.ipynb
+.env
+.env.example
