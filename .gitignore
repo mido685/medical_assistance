@@ -1,4 +1,4 @@
-echo "checkpoint-3270/
+checkpoint-3270/
 *.pt
 *.safetensors
 __pycache__/
@@ -6,7 +6,4 @@ __pycache__/
 .env
 medication_cleaned.csv
 checkpoint.json
-medication_ner_finetune.ipynb" > .gitignore
-
-git add .gitignore
-git commit -m "add .gitignore to ignore large files"
+medication_ner_finetune.ipynb
