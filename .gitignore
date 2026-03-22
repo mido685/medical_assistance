@@ -1,4 +1,10 @@
 .env
 checkpoint-3270/
 *.pt
-*.safetensors
+*.safetensorscheckpoint-3270/
+medication_cleaned.csv
+checkpoint.json
+medication_ner_finetune.ipynb
+__pycache__/
+*.pyc
+.env
