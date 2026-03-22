@@ -1,11 +1,7 @@
-checkpoint-3270/
-*.pt
-*.safetensors
 __pycache__/
 *.pyc
 .env
 medication_cleaned.csv
-checkpoint.json
 medication_ner_finetune.ipynb
 .env
 .env.example
