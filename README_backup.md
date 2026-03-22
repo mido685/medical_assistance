@@ -1,12 +1,3 @@
----
-title: Stark Medical Assistant
-emoji: 🏥
-colorFrom: blue
-colorTo: green
-sdk: docker
-pinned: false
----
-
 # 🏥 MedAssist — AI Medication Tracker
 
 FastAPI + NER Model + PostgreSQL + Twilio WhatsApp
