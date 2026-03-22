@@ -1,10 +1,16 @@
+# Environment files
 .env
+
+# Checkpoints and large model files
 checkpoint-3270/
 *.pt
-*.safetensorscheckpoint-3270/
+*.safetensors
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data & notebooks (optional: only if you don’t want to track them)
 medication_cleaned.csv
 checkpoint.json
 medication_ner_finetune.ipynb
-__pycache__/
-*.pyc
-.env
