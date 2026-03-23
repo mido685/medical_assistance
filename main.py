@@ -60,11 +60,9 @@ class Settings(BaseSettings):
     db_pool_min         : int       = 2
     db_pool_max         : int       = 10
     timezone            : str       = "Africa/Cairo"
-
     class Config:
         # no .env needed, just read from ENV vars
-        env_file = .env# ═════════════════════════════════════════════════════════════════════════════
-
+        env_file = ".env"  # Specify the path to your .env file
 
 settings = Settings()
 
