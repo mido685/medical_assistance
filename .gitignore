@@ -4,4 +4,3 @@ __pycache__/
 medication_cleaned.csv
 medication_ner_finetune.ipynb
 .env
-.env.example

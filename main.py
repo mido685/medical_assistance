@@ -48,10 +48,10 @@ from transformers import (
 # ═════════════════════════════════════════════════════════════════════════════
 
 class Settings(BaseSettings):
-    database_url        : str       = "postgresql://postgres:01091126266@localhost:5432/medical_db"
+    database_url        : str       = "postgresql://postgres:YU7G&4hBTKubJj*@db.rlixsjvnsxsppqylfqhr.supabase.co:5432/postgres"
     telegram_bot_token  : str       = "8640599075:AAH8nOofG3VnPgz0RQmAa_Ik8ZihM6x2gw4"
     telegram_chat_id    : str       = "6806063221"
-    model_path          : str       = "./checkpoint-3270"
+    model_path          : str       = "mohamed1357/stark-medical-model"
     log_level           : str       = "INFO"
     allowed_origins     : list[str] = ["*"]
     rate_limit_requests : int       = 30
@@ -311,14 +311,16 @@ _ner_pipeline = None
 
 def load_model() -> None:
     global _ner_pipeline
-    model_path = Path(settings.model_path)
-    if not model_path.exists():
-        raise FileNotFoundError(f"Model not found at {model_path}")
-    tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
-    model     = AutoModelForTokenClassification.from_pretrained(model_path, local_files_only=True)
-    _ner_pipeline = pipeline("ner", model=model, tokenizer=tokenizer, aggregation_strategy="first")
-    logger.info("NER model loaded from %s", model_path)
-
+    logger.info("loading model from hugging face: %s", settings.model_path)
+    tokenizer = AutoTokenizer.from_pretrained(settings.model_path)
+    model     = AutoModelForTokenClassification.from_pretrained(settings.model_path)
+    _ner_pipeline = pipeline(
+        "ner",
+        model=model,
+        tokenizer=tokenizer,
+        aggregation_strategy="first"
+    )
+    logger.info("model loaded successfully from hugging face!")
 
 def extract_entities(text: str) -> dict[str, list[str]]:
     if _ner_pipeline is None:
