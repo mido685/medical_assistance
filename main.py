@@ -45,13 +45,14 @@ from transformers import (
 
 # ═════════════════════════════════════════════════════════════════════════════
 # 1. CONFIGURATION
-# ═════════════════════════════════════════════════════════════════════════════
+from pydantic_settings import BaseSettings
+from pathlib import Path
 
 class Settings(BaseSettings):
-    database_url        : str       = "postgresql://postgres:YU7G&4hBTKubJj*@db.rlixsjvnsxsppqylfqhr.supabase.co:5432/postgres"
-    telegram_bot_token  : str       = "8640599075:AAH8nOofG3VnPgz0RQmAa_Ik8ZihM6x2gw4"
-    telegram_chat_id    : str       = "6806063221"
-    model_path          : str       = "mohamed1357/stark-medical-model"
+    database_url        : str       # must be set as ENV
+    telegram_bot_token  : str
+    telegram_chat_id    : str
+    model_path          : str
     log_level           : str       = "INFO"
     allowed_origins     : list[str] = ["*"]
     rate_limit_requests : int       = 30
@@ -61,8 +62,9 @@ class Settings(BaseSettings):
     timezone            : str       = "Africa/Cairo"
 
     class Config:
-        env_file          = Path(__file__).parent / ".env"
-        env_file_encoding = "utf-8"
+        # no .env needed, just read from ENV vars
+        env_file = None# ═════════════════════════════════════════════════════════════════════════════
+
 
 settings = Settings()
 
