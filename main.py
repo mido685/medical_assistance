@@ -63,7 +63,7 @@ class Settings(BaseSettings):
 
     class Config:
         # no .env needed, just read from ENV vars
-        env_file = None# ═════════════════════════════════════════════════════════════════════════════
+        env_file = .env# ═════════════════════════════════════════════════════════════════════════════
 
 
 settings = Settings()
