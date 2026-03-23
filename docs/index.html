@@ -1549,7 +1549,7 @@
     const body = document.getElementById('historyBody');
     body.innerHTML = '<div class="modal-loading">Loading your medication history...</div>';
     try {
-      const res  = await fetch(`${API_BASE}/medications/history/${currentUserId}`);
+      const res = await fetch(`${API_BASE}/medications/user/${currentUserId}`);
       if (!res.ok) throw new Error('Failed to load history');
       const data = await res.json();
       historyData = data.medications || [];
