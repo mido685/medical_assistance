@@ -5,3 +5,8 @@ medication_cleaned.csv
 medication_ner_finetune.ipynb
 .env
 checkpoint-3270/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
